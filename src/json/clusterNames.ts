@@ -1,4 +1,30 @@
-[
+const ores: string[] = [
+  "gold",
+  "silver",
+  "iron",
+  "coal",
+  "diamond",
+  "copper",
+  "tin",
+  "zinc",
+  "lead",
+  "platinum",
+  "ruby",
+  "sapphire",
+  "emerald",
+  "topaz",
+  "quartz",
+  "obsidian",
+  "lapis",
+  "aluminum",
+  "nickel",
+  "amber",
+  "jade",
+  "tungsten",
+  "graphite"
+];
+
+const animals: string[] = [
   "lion",
   "bear",
   "wolf",
@@ -39,4 +65,6 @@
   "sphinx",
   "basilisk",
   "kitsune"
-]
+];
+
+export {ores, animals};
