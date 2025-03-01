@@ -1,0 +1,28 @@
+{
+  "name": "mistybot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/cluster.ts",
+    "start": "NODE_ENV=production node dist/cluster.cjs",
+    "build": "tsup src --format esm --dts --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@swc-node/register": "^1.10.9",
+    "discord-hybrid-sharding": "^2.2.3",
+    "discord.js": "^14.16.3",
+    "dotenv": "^16.4.5",
+    "source-map-support": "^0.5.21",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
