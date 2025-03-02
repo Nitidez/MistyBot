@@ -5,9 +5,10 @@
   "main": "dist/cluster.js",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/cluster.ts",
+    "dev": "tsx src/cluster.ts",
     "start": "NODE_ENV=production node dist/cluster.js",
-    "build": "tsup src --format esm --minify"
+    "build": "tsup src --format esm --minify",
+    "prod": "npm run build && npm run start"
   },
   "keywords": [],
   "author": "Nitidez",
@@ -16,10 +17,12 @@
     "discord-hybrid-sharding": "^2.2.4",
     "discord.js": "^14.18.0",
     "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
     "@types/node": "^22.13.8"
   }
 }

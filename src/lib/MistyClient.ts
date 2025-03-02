@@ -1,6 +1,7 @@
 import { ClusterClient, getInfo } from 'discord-hybrid-sharding';
 import { Client } from 'discord.js';
 import 'dotenv/config';
+import { registerCommands } from './Command';
 
 class MistyClient extends Client {
     cluster: ClusterClient;
@@ -8,9 +9,15 @@ class MistyClient extends Client {
         super({
             shards: getInfo().SHARD_LIST,
             shardCount: getInfo().TOTAL_SHARDS,
-            intents: []
+            intents: [
+                "MessageContent",
+                "GuildMessages",
+                "Guilds"
+            ]
         })
         this.cluster = new ClusterClient(this);
+
+        registerCommands();
     }
 
     async login(): Promise<string> {

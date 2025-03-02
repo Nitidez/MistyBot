@@ -1,4 +1,5 @@
 import {ores, animals} from '@/json/clusterNames'
+import MistyClient from './lib/MistyClient';
 
 const clusterNames: Record<number, string> = {};
 const shardNames: Record<number, string> = {};
@@ -7,7 +8,10 @@ const usedShardNames: Set<string> = new Set();
 let fullClusterNamesIndex: number = 0;
 let fullShardNamesIndex: number = 0;
 
-function getClusterName(id: number): string {
+async function getClusterName(id: number, client?: MistyClient): Promise<string> {
+    if (client !== undefined) {
+        return (await client.cluster.evalOnManager(`global.ggcn(${id})`)) as any;
+    }
     if (!(id in clusterNames)) {
         const available = ores.filter(o => !(usedClusterNames.has(o)));
         if (available.length === 0) {
@@ -22,7 +26,10 @@ function getClusterName(id: number): string {
     return clusterNames[id];
 }
 
-function getShardName(id: number): string {
+async function getShardName(id: number, client?: MistyClient): Promise<string> {
+    if (client !== undefined) {
+        return (await client.cluster.evalOnManager(`global.ggsn(${id})`)) as any;
+    }
     if (!(id in shardNames)) {
         const available = animals.filter(a => !(usedShardNames.has(a)));
         if (available.length === 0) {
