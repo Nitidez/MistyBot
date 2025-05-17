@@ -5,8 +5,6 @@ import 'dotenv/config';
 class MistyClient extends Client {
     cluster: ClusterClient;
     constructor() {
-        console.log(process.env)
-        console.log(getInfo());
         super({
             intents: [],
             shards: getInfo().SHARD_LIST,

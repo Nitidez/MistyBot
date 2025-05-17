@@ -6,23 +6,23 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/cluster.ts",
-    "start": "NODE_ENV=production node dist/cluster.cjs",
+    "start": "NODE_ENV=production node dist/cluster.js",
     "build": "tsup src --format esm --dts --minify"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@swc-node/register": "^1.10.9",
-    "discord-hybrid-sharding": "^2.2.3",
-    "discord.js": "^14.16.3",
-    "dotenv": "^16.4.5",
+    "@swc-node/register": "^1.10.10",
+    "discord-hybrid-sharding": "^2.2.6",
+    "discord.js": "^14.19.3",
+    "dotenv": "^16.5.0",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "tsup": "^8.3.5",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2"
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
   }
 }
